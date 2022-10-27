@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.folder {
+  margin-left: 1.5rem;
+  display: none;
+}
+
+.folder-header.is-active ~ .folder {
+  display: block;
+}
+
+.container > .folder {
+  display: block !important;
+}
+
+.folder-header {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  user-select: none;
+}
+
+.folder-header::before {
+  content: "+";
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid #999;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 0.4rem;
+  box-sizing: border-box;
+}
+
+.folder-header.is-active::before {
+  content: "-";
+}
+
+.folder-header.not-parent::before {
+  content: "";
+  border-color: transparent;
+}
+
+.folder-icon {
+  width: 2rem;
+  object-fit: cover;
+}
+
+.title {
+  margin: 2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
